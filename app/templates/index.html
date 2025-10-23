@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>E-Discovery Platform</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; background: #f6f6f6; }
+      h1 { color: #1a4b8c; }
+      form { background: white; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+      textarea, input[type="text"] { width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 4px; border: 1px solid #ccc; }
+      button { padding: 0.5rem 1rem; margin-top: 0.75rem; background: #1a4b8c; color: white; border: none; border-radius: 4px; cursor: pointer; }
+      button:hover { background: #163c6b; }
+      .messages { color: #24573a; margin-bottom: 1rem; }
+      .insight { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 1rem; }
+      .flash { color: #a94442; }
+    </style>
+  </head>
+  <body>
+    <h1>E-Discovery Assistant</h1>
+
+    {% with flashes = get_flashed_messages() %}
+      {% if flashes %}
+        <div class="flash">
+          {% for message in flashes %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post">
+      <h2>Collect Documents</h2>
+      <input type="hidden" name="action" value="collect">
+      <label for="sources">Enter file paths or URLs (one per line)</label>
+      <textarea id="sources" name="sources" rows="4" placeholder="/path/to/document.pdf
+https://example.com/evidence.txt"></textarea>
+      <button type="submit">Collect &amp; Parse</button>
+    </form>
+
+    <form method="post" enctype="multipart/form-data">
+      <h2>Upload Document</h2>
+      <input type="hidden" name="action" value="upload">
+      <input type="file" name="document" accept=".pdf,.txt,.md,.rtf,.eml">
+      <button type="submit">Upload &amp; Parse</button>
+    </form>
+
+    <form method="post">
+      <h2>Ask a Question</h2>
+      <input type="hidden" name="action" value="query">
+      <label for="query">Your question</label>
+      <input type="text" id="query" name="query" value="{{ query or '' }}" placeholder="e.g., What evidence supports claim X?">
+      <button type="submit">Search Insights</button>
+    </form>
+
+    {% if insights %}
+      <section>
+        <h2>Insights</h2>
+        {% for insight in insights %}
+          <div class="insight">
+            <strong>{{ insight.citation }}</strong>
+            <p>{{ insight.snippet }}</p>
+            <small>Relevance: {{ '%.2f'|format(insight.score) }}</small>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  </body>
+</html>
