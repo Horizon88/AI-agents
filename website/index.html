@@ -3,72 +3,59 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Striker Law | Justice. Focused.</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Hello World – Hawaii</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: #f8f9fb;
+            color: #1f2933;
+        }
+
+        main {
+            text-align: center;
+            padding: 2rem;
+            max-width: 38rem;
+        }
+
+        figure {
+            margin: 2rem auto 0;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 0.75rem;
+            box-shadow: 0 1rem 2.5rem rgba(15, 23, 42, 0.15);
+        }
+
+        figcaption {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="hero__content">
-            <h1>Striker Law</h1>
-            <p>Justice. Focused.</p>
-            <a class="hero__cta" href="#contact">Schedule a Consultation</a>
-        </div>
-    </header>
-
     <main>
-        <section class="section" id="about">
-            <h2>Who We Are</h2>
-            <p>
-                Striker Law is a litigation-focused firm committed to delivering clear counsel
-                and decisive representation. We blend courtroom experience with strategic planning
-                to protect your interests.
-            </p>
-        </section>
-
-        <section class="section section--accent" id="services">
-            <h2>Practice Areas</h2>
-            <div class="grid">
-                <article class="card">
-                    <h3>Business Litigation</h3>
-                    <p>Resolving commercial disputes with precision and discretion.</p>
-                </article>
-                <article class="card">
-                    <h3>Employment Law</h3>
-                    <p>Guiding employers and executives through complex workplace matters.</p>
-                </article>
-                <article class="card">
-                    <h3>White Collar Defense</h3>
-                    <p>Protecting reputations while navigating high-stakes investigations.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="team">
-            <h2>Our Approach</h2>
-            <ul class="bullets">
-                <li>Partner-led representation on every matter.</li>
-                <li>Lean teams built for speed and clarity.</li>
-                <li>Transparent updates and cost expectations.</li>
-            </ul>
-        </section>
-
-        <section class="section section--contact" id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:contact@strikerlaw.com">contact@strikerlaw.com</a></p>
-            <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
-            <p class="contact__note">We respond within one business day.</p>
-        </section>
+        <h1>Hello World</h1>
+        <p>Welcome to a minimal legal demo site featuring a Hawaiian vista.</p>
+        <figure>
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/20/Surfing_at_Waikiki_Beach_-_nara.16552801376.jpg"
+                alt="Surfers riding a wave at Waikiki Beach in Hawaii"
+                loading="lazy"
+            />
+            <figcaption>
+                Public-domain image courtesy of the U.S. National Archives.
+            </figcaption>
+        </figure>
     </main>
-
-    <footer class="footer">
-        <small>&copy; <span id="year"></span> Striker Law. All rights reserved.</small>
-    </footer>
-
-    <script>
-        const yearEl = document.getElementById("year");
-        if (yearEl) {
-            yearEl.textContent = new Date().getFullYear();
-        }
-    </script>
 </body>
 </html>
