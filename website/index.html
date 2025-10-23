@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Striker Law | Justice. Focused.</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__content">
+            <h1>Striker Law</h1>
+            <p>Justice. Focused.</p>
+            <a class="hero__cta" href="#contact">Schedule a Consultation</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="about">
+            <h2>Who We Are</h2>
+            <p>
+                Striker Law is a litigation-focused firm committed to delivering clear counsel
+                and decisive representation. We blend courtroom experience with strategic planning
+                to protect your interests.
+            </p>
+        </section>
+
+        <section class="section section--accent" id="services">
+            <h2>Practice Areas</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Business Litigation</h3>
+                    <p>Resolving commercial disputes with precision and discretion.</p>
+                </article>
+                <article class="card">
+                    <h3>Employment Law</h3>
+                    <p>Guiding employers and executives through complex workplace matters.</p>
+                </article>
+                <article class="card">
+                    <h3>White Collar Defense</h3>
+                    <p>Protecting reputations while navigating high-stakes investigations.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="team">
+            <h2>Our Approach</h2>
+            <ul class="bullets">
+                <li>Partner-led representation on every matter.</li>
+                <li>Lean teams built for speed and clarity.</li>
+                <li>Transparent updates and cost expectations.</li>
+            </ul>
+        </section>
+
+        <section class="section section--contact" id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:contact@strikerlaw.com">contact@strikerlaw.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+            <p class="contact__note">We respond within one business day.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>&copy; <span id="year"></span> Striker Law. All rights reserved.</small>
+    </footer>
+
+    <script>
+        const yearEl = document.getElementById("year");
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
